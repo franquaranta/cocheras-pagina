@@ -1,0 +1,144 @@
+@use "./../../../../public/styles/colores.scss";
+@use "./../../../../public/styles/tablas.scss";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5a5a5a;
+    padding: 15px 20px;
+    width: 100%;
+    color: white;
+
+    .reportes-section {
+        text-align: left;
+
+
+        h2 {
+            font-size: 1em;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+    }
+
+    .header-links {
+        display: flex;
+        align-items: center;
+
+        .logout-btn {
+            background-color: #5a5a5a;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin-right: 15px; 
+
+            &:hover {
+                background-color: #4a4a4a;
+            }
+        }
+
+        .reportes {
+            margin-right: 15px; 
+            background-color: #5a5a5a;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: #4a4a4a;
+            }
+        }
+    }
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+
+    .boton-resaltado {
+        background-color: #5a5a5a;
+        font-size: 16px;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 8px;
+        color: white;
+        cursor: pointer;
+        margin: 0 5px; 
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: #4a4a4a;
+        }
+    }
+}
+
+.tabla {
+    width: 100%;
+    margin: 20px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    .header-tabla {
+        font-size: 1.2em;
+        background-color: #5a5a5a;
+        color: white;
+        padding: 15px;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid;
+        margin: 0;
+        text-transform: uppercase;
+    }
+
+    .fila-tabla {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px;
+        background-color: #f8f8f8;
+        border-bottom: 1px solid #ccc;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #ececec;
+        }
+
+        > div {
+            flex: 1;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .acciones-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .boton-eliminar {
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                font-size: 30px;
+                color: #0e0d0d;
+
+                &:hover {
+                    color: #0a0909;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+<div class="container">
+    <header class="header">
+        <div class="reportes-section">
+            <h2>REPORTES</h2>
+        </div>
+        <div class="header-links">
+            <a class="logout-btn" [routerLink]="['/Login']">Cerrar sesión</a>
+            <a [routerLink]="['/estado-cocheras']" class="reportes">Estado Cocheras</a>
+        </div>
+    </header>
+    
+    <div class="action-buttons">
+        <button (click)="agregarFila()" class="boton-resaltado">Agregar fila</button>
+    </div>
+
+    <div class="tabla">
+        <div class="header-tabla fila">
+            <div>Nro.</div>
+            <div>Mes</div>
+            <div>Uso</div>
+            <div>Cobranza</div>
+            <div>Acciones</div>
+        </div>
+        <div *ngFor="let fila of filas; let i = index" class="fila-tabla">
+            <div>{{ fila.nro }}</div>
+            <div>{{ fila.mes }}</div>
+            <div>{{ fila.uso }}</div>
+            <div>{{ fila.cobranza }}</div>
+            <div class="acciones-container">
+                <button (click)="eliminarFila(i, $event)" class="boton-eliminar">🗑</button>
+            </div>   
+        </div> 
+    </div>
+</div>
+

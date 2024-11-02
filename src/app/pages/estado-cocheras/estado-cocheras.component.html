@@ -1,0 +1,33 @@
+<header>
+    <p class="estado-cocheras">ESTADO COCHERAS</p>  
+    <a [routerLink]="['/reporte']" class="reporte">REPORTE</a>
+    <a [routerLink]="['/precios']" class="reporte">PRECIOS</a>
+    <a [routerLink]="['/login']" class="reporte">CERRAR SESIÓN</a>
+    <a href=""><img src="images/logo.png" alt="Logo"></a>
+</header>
+<main>
+    <div>
+        <button (click) = "agregarFila()" class="boton-resaltado" >AGREGAR FILA</button>
+    </div>
+    <div id="tabla">
+        <div id="header-tabla">
+            <div>{{header.nro}}</div>
+            <div>{{header.deshabilitada}}</div>
+            <div>{{header.ingreso}}</div>
+            <div>{{header.acciones}}</div>
+        </div>
+    </div>
+    <div *ngFor="let fila of filas; let i = index" class="orden-filas">
+            <div>{{fila.id}}</div>
+            <div>
+                <span [ngClass]="{disponible: fila.deshabilitada, ocupado: !fila.deshabilitada}">{{fila.deshabilitada
+                ? 'DISPONIBLE'
+                : 'NO DISPONIBLE'}}</span></div>
+            <div>{{fila.descripcion}}</div>
+            <div class = "acciones-container">
+                <button (click)="cambiarDisponibilidadCochera(fila.id, $event)"> <img src="images/prohibido1.png" alt="cambiar disponibilidad"></button>
+                <button (click)="eliminarFila(fila.id,$event)" class ="boton-eliminar"><img src="images/eliminar2.png" alt="eliminar"></button></div>
+            </div>
+<footer>
+    <a [routerLink]="['/login']">Cerrar sesión</a>
+</footer>
